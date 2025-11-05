@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-   "homepage": "https://tuusuario.github.io/gestor-tareas-react",
+   "homepage": "https://LucasPerez02.github.io/gestor-tareas-react",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
