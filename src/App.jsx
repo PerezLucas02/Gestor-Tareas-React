@@ -39,7 +39,10 @@ const AppContent = () => {
           }
         />
       </Routes>
-      <Watermark /> {/* 👈 Aparece en todas las páginas */}
+      <Router>
+          <Watermark /> {/* 👈 Aparece en todas las páginas */}
+      </Router>
+      
     </>
     
   );
