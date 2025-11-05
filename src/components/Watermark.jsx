@@ -10,7 +10,7 @@ const Watermark = () => {
         opacity: 0.7,
         fontSize: "0.9rem",
         fontWeight: "bold",
-        color: "292929", // color azul Bootstrap
+        color: "#292929", // color azul Bootstrap
         zIndex: 9999,
         pointerEvents: "none", // no bloquea clics
       }}
