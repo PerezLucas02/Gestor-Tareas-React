@@ -38,11 +38,8 @@ const AppContent = () => {
             </PrivateRoute>
           }
         />
+        <Watermark /> {/* 👈 Aparece en todas las páginas */}
       </Routes>
-      <Router>
-          <Watermark /> {/* 👈 Aparece en todas las páginas */}
-      </Router>
-      
     </>
     
   );
