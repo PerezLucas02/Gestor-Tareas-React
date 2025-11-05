@@ -1,18 +1,19 @@
 import React from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "./context/AuthContext";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+import { TaskProvider } from "./context/TaskContext";
+import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import TaskManager from "./pages/TaskManager";
-import Login from "./pages/Login";
 import NavbarCustom from "./components/NavbarCustom";
-import Watermark from "./components/Watermark";
+import Watermark from "./components/Watermark"; // 👈 Importar acá
 
 const PrivateRoute = ({ children }) => {
   const { user } = useAuth();
   return user ? children : <Navigate to="/" />;
 };
 
-const App = () => {
+const AppContent = () => {
   const location = useLocation();
   const hideNavbar = location.pathname === "/";
 
@@ -38,8 +39,23 @@ const App = () => {
           }
         />
       </Routes>
-      <Watermark />
+
+          <Watermark /> {/* 👈 Aparece en todas las páginas */}
+      
     </>
+    
+  );
+};
+
+const App = () => {
+  return (
+    <AuthProvider>
+      <TaskProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </TaskProvider>
+    </AuthProvider>
   );
 };
 
