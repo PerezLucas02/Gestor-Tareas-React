@@ -13,13 +13,22 @@ const Login = () => {
     e.preventDefault();
     const success = login(username, password);
     if (success) {
-      navigate("/dashboard"); // solo si el login fue correcto
+      navigate("/dashboard");
     }
   };
 
   return (
-    <Container className="mt-5 d-flex justify-content-center">
-      <Card style={{ width: "22rem" }} className="p-4 shadow">
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #007bff 0%, #6610f2 100%)",
+      }}
+    >
+      <Card
+        style={{ width: "22rem", borderRadius: "1rem" }}
+        className="p-4 shadow-lg bg-white"
+      >
         <h3 className="text-center mb-3">Iniciar Sesión</h3>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
@@ -40,12 +49,17 @@ const Login = () => {
               required
             />
           </Form.Group>
-          <Button variant="primary" type="submit" className="w-100">
+          <Button
+            variant="primary"
+            type="submit"
+            className="w-100 fw-bold"
+            style={{ borderRadius: "0.5rem" }}
+          >
             Entrar
           </Button>
         </Form>
       </Card>
-    </Container>
+    </div>
   );
 };
 
