@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import TaskManager from "./pages/TaskManager";
 import NavbarCustom from "./components/NavbarCustom";
+import Watermark from "./components/Watermark"; // 👈 Importar acá
 
 const PrivateRoute = ({ children }) => {
   const { user } = useAuth();
@@ -38,7 +39,9 @@ const AppContent = () => {
           }
         />
       </Routes>
+      <Watermark /> {/* 👈 Aparece en todas las páginas */}
     </>
+    
   );
 };
 
