@@ -1,3 +1,4 @@
+// src/pages/Login.jsx
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -12,22 +13,27 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const success = login(username, password);
-    if (success) {
-      navigate("/dashboard");
-    }
+    if (success) navigate("/dashboard");
   };
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center"
       style={{
-        minHeight: "100vh",
-        background: "linear-gradient(135deg, #007bff 0%, #6610f2 100%)",
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "linear-gradient(135deg, #4b6cb7 0%, #182848 100%)",
       }}
     >
       <Card
-        style={{ width: "22rem", borderRadius: "1rem" }}
-        className="p-4 shadow-lg bg-white"
+        style={{
+          width: "22rem",
+          borderRadius: "1rem",
+          boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+        }}
+        className="p-4 bg-light"
       >
         <h3 className="text-center mb-3">Iniciar Sesión</h3>
         <Form onSubmit={handleSubmit}>
@@ -49,12 +55,7 @@ const Login = () => {
               required
             />
           </Form.Group>
-          <Button
-            variant="primary"
-            type="submit"
-            className="w-100 fw-bold"
-            style={{ borderRadius: "0.5rem" }}
-          >
+          <Button variant="primary" type="submit" className="w-100 fw-bold">
             Entrar
           </Button>
         </Form>
