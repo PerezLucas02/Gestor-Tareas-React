@@ -11,8 +11,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(username, password);
-    navigate("/dashboard");
+    const success = login(username, password);
+    if (success) {
+      navigate("/dashboard"); // solo si el login fue correcto
+    }
   };
 
   return (

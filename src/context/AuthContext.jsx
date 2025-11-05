@@ -14,8 +14,10 @@ export const AuthProvider = ({ children }) => {
 
     if (foundUser) {
       setUser({ username: foundUser.username });
+      return true; // 🔹 login exitoso
     } else {
       alert("Usuario o contraseña incorrectos");
+      return false; // 🔹 login fallido
     }
   };
 
