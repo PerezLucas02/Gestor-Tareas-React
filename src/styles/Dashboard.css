@@ -1,0 +1,31 @@
+.task-card {
+  transition: all 0.4s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.task-pending {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0d6efd;
+}
+
+.task-done {
+  background-color: #d1e7dd;
+  border-left: 4px solid #198754;
+  opacity: 0.9;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
